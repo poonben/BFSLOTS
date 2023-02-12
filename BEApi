@@ -1,0 +1,104 @@
+import json, requests
+
+class BEApi():
+    def __init__(self, apikey):
+        self.host = "https://api.be-team.me"
+        self.headers = {"Apikey": apikey}
+        self.session = requests.Session()
+
+    def pretyPrintJson(self, djson):
+        print(json.dumps(djson, indent=4, sort_keys=True))
+        
+    def sendPost(self, path, headers=None, data=None, files=None, djson=None):
+        if headers:
+            headers = {**headers, **self.headers}
+        else:
+            headers = self.headers
+        try:
+            r = json.loads(self.session.post(self.host+path,headers=headers,data=data,files=files,json=djson).text)
+        except:
+            raise Exception("Oops... Like api is down :(")
+        if r["status"] != 200:
+            raise Exception(str(r))
+        return r
+
+    
+    def sendGet(self, path, headers=None):
+        if headers:
+            headers = {**headers, **self.headers}
+        else:
+            headers = self.headers
+        try:  
+            r = json.loads(self.session.get(self.host+path,headers=headers).text)
+        except:
+            raise Exception("Oops... Like api is down :(")
+        if r["status"] != 200:
+            raise Exception(str(r))
+        return r
+
+
+    ### APIKEY STATUS CHECKER ###
+    def checkStatusApikey(self):
+        return self.sendGet("/apikey")
+
+    ### WALLPAPER HD ###
+    def alphaCodersSearch(self, search, page=1):
+        return self.sendGet("/alphacoders?search={}&page={}".format(search,page))
+
+    ### ANIME INDO 1 ###
+    def animeIndo1List(self):
+        return self.sendGet("/animeindo1/list")
+    def animeIndo1Ongoing(self):
+        return self.sendGet("/animeindo1/ongoing")
+    def animeIndo1Fetch(self, url):
+        return self.sendGet(url.replace(self.host,""))
+
+    ### ANIME INDO 2 ###
+    def animeIndo2List(self):
+        return self.sendGet("/animeindo2/list")
+    def animeIndo2Ongoing(self):
+        return self.sendGet("/animeindo2/ongoing")
+    def animeIndo2Fetch(self, url):
+        return self.sendGet(url.replace(self.host,""))
+    
+    ### ANIME ENGLISH 2 ###
+    def animenglishSeries(self):
+        return self.sendGet("/animenglish/series")
+    def animenglishMovie(self):
+        return self.sendGet("/animenglish/movie")
+
+    ### ANIMEXIN ###
+    def animexinOngoing(self):
+        return self.sendGet("/animexin/ongoing")
+
+    ### AUTHKEY TO PRIMARY CONVERT ###
+    def authkeytoprimary(self, authkey):
+        return self.sendGet("/authkey2primary?authkey="+authkey)
+
+    ### BRANLY SEARCH ###
+    def brainlySearch(self, search):
+        return self.sendGet("/brainly?search="+search)
+
+    ### COOKPAD SEARCH ###
+    def cookpadSearch(self, search, lang="id"): #[en,id]
+        return self.sendGet("/cookpad?search={}&lang={}".format(search,lang))
+
+    ### DANBOORU PAGE ###
+    def danbooruPage(self, page=1):
+        return self.sendGet("/danbooru?page="+str(page))
+
+    ### DATABASE JSON ###
+    def saveDatabaseJson(self, dataJson):
+        return self.sendPost("/databasejson",djson=dataJson)
+    def getDatabaseJson(self, name):
+        return self.sendGet("/databasejson/"+name)
+
+    ### PHOTOFUNIA ###
+        # ONE PHOTO PATERN #
+    def funia1WithPath(self, category, path):
+        categoryFunia1 = ['concrete-jungle', 'at-the-gallery', 'halloween-pumpkins', 'harley-davidson', 'the-frame', 'vintage-scooter', 'card-with-flowers', 'giant-artwork', 'explorer-drawing', 'at-the-beach', 'in-the-woods', 'shopping-arcade', 'art-admirer', 'sketch-practicing', 'passage', 'travellers-sketch', 'mirror', 'ink-portrait', 'truck-advert', 'girl-with-bicycle', 'easter-flowers', 'easter-frame', 'puppy-with-frame', 'city-billboard', 'underground-poster', 'sparklers', 'famous-gallery', 'burning-fire', 'autumn-frame', 'tablet', 'black-and-white-mural', 'vintage-photos', 'art-experts', 'scroll', 'worker-by-the-billboard', 'old-camera', 'tokyo-crossing', 'in-the-cinema', 'spring-flowers', 'latte-art', 'love-letter', 'wall-poster', 'skydiver', 'national-gallery-in-london', 'watercolour-painting', 'summoning-spirits', 'stadium', 'coloured-pencils', 'piccadilly-arcade', 'drawing-photo', 'artistic-filter', 'winter-princess', 'train-station-poster', 'knight-with-sword', 'football-field', 'rainy-night', 'bunnies', 'roses-and-marshmallows', 'playful-cat', 'wall-mural', 'gallery-visitor', 'equestrienne', 'new-year-frames', 'ghostwood', 'frankenstein-monster', 'brass-frame', 'red-and-blue', 'painting-and-sketches', 'new-york-street', 'wedding-day', 'vhs', 'passing-by-the-painting', 'lemon-tree', 'evening-billboard', 'kitty-and-frame', 'pedestrian-crossing', 'press_conference', 'picture_at_the_gallery', 'on_the_mountain', 'building_painters', 'replacing_billboard_advert', 'warrior', 'heart_locket', 'painter_at_work', 'galeries_lafayette', 'mermaid', 'goats', 'golden_valentine', 'london_calling', 'drawing_near_the_sea', 'ornament', 'indian_beauty', 'apples', 'spring_memories', 'brugge', 'medieval_art', 'cappuccino', 'modern_art_exhibition', 'louvre', 'watercolours', 'woman_pilot', 'vintage_table', 'pavement_artist', 'bicycle', 'bunny_ears', 'crooked_gambler', 'frame_and_roses', 'crown', 'oxford', 'midnight_billboard', 'pisa_street', 'pictures_sale', 'citylight', 'film_scan', 'knight', 'picadilly_circus', 'graffiti_billboard', 'romantic_etude', 'broadway', 'yellow_wall', 'the_first_man_on_the_moon', 'large_painting', 'mint_frame', 'night_street', 'boardings', 'portrait_on_the_wall', 'easter', 'impressionists', 'biker', 'snow_in_london', 'vintage_frame', 'family_in_museum', 'museum_kid', 'oil_painting', 'xmas_tree', 'marilyn_autograph', 'graffiti_wall', 'graffiti_artist', 'pumpkins', 'lavander', 'fire', 'truck', 'obama', 'roses', 'late_autumn', 'graffiti', 'riverside_billboard', 'stacco', 'etude', 'surfer', 'ny_taxis', 'chinese_opera', 'sidewalk', 'the_kiss', 'snowboard', 'mysterious_painting', 'prince_of_wales_theatre', 'sphinx', 'swedish_billboard', 'witch', 'nyc', 'art_gallery', 'city', 'dj', 'the_gun', 'tulips', 'flower_frame', 'male_gambler', 'female_gambler', 'artist', 'last_advert', 'lego_portrait', 'bride_in_grass', 'cafe', 'ax', 'artist_in_the_dark', 'hammock', 'goalkeeper', 'billboard_workers', 'huge_billboard', 'ophelia', 'leftfield', 'pavement_art', 'osaka', 'hockey_team', 'street_artist', 'watercolor', 'drawing', 'night_ride', 'frosty_window', 'girls_with_poster', 'watchinng', '100_dollars', 'puzzle', 'pastel', 'library', 'twilight', 'urban_billboard', 'glass', 'singer', 'bodybuilder', 'female_soldier', 'cupid', 'night_walk', 'icecream', 'rainy_day', 'urban', 'odessa_opera_house', 'hockey', 'captivity', 'local_shop', 'tram', 'ethanol', 'taipei', 'jigsaw_puzzle', 'mount_rushmore', 'lego', 'stencil', 'esquire', 'glamour', 'galatea', 'reproduction', 'godfather', 'death_proof', 'coffee_break', 'chris_pirillo', 'old_book', 'shop_poster', 'retail_park', 'purple_sky', 'warhol', 'special_billboard', 'yo', 'reflection', 'wall_painting', 'bride', 'tv_girl', 'mini_cooper', 'lenin', 'reconstruction', 'two_cats', 'superman', 'frame', 'street_exhibition', 'wall', 'night', 'pilot', 'pavement_drawing', 'applying_makeup', 'polaroid_dress', 'torn_billboard', 'kitty', 'portrait', 'eye', 'posters', 'night_city', 'bad_santa', 'christmass_tree_balls', 'good_luck_chuck', 'paris_hilton', 'cinema', 'wall_banner', 'gas_mask_freaks', 'marilyn_monroe', 'two_female_fans', 'wanted_wizard', 'on_the_moon', 'art_exhibition', 'train_station', 'museum', 'madonna', 'mona_lisa', 'vogue', 'dollar', 'art_painting', 'behind_the_fence', 'newspaper', 'castle', 'angry_granny', 'victoria_beckham', 'putin', 'perfume_shop', 'billboard', 'shopping_center']
+        if category not in categoryFunia1:
+            raise Exception("Category funia1 not found...")
+        return self.sendPost("/photofunia1?category="+category,files={"file": open(path,"rb")})
+    def funia1WithUrl(self, category, url):
+        categoryFunia1 = ['concrete-jungle', 'at-the-gallery', 'halloween-pumpkins', 'harley-davidson', 'the-frame', 'vintage-scooter', 'card-with-flowers', 'giant-artwork', 'explorer-drawing', 'at-the-beach', 'in-the-woods', 'shopping-arcade', 'art-admirer', 'sketch-practicing', 'passage', 'travellers-sketch', 'mirror', 'ink-portrait', 'truck-advert', 'girl-with-bicycle', 'easter-flowers', 'easter-frame', 'puppy-with-frame', 'city-billboard', 'underground-poster', 'sparklers', 'famous-gallery', 'burning-fire', 'autumn-frame', 'tablet', 'black-and-white-mural', 'vintage-photos', 'art-experts', 'scroll', 'worker-by-the-billboard', 'old-camera', 'tokyo-crossing', 'in-the-cinema', 'spring-flowers', 'latte-art', 'love-letter', 'wall-poster', 'skydiver', 'national-gallery-in-london', 'watercolour-painting', 'summoning-spirits', 'stadium', 'coloured-pencils', 'piccadilly-arcade', 'drawing-photo', 'artistic-filter', 'winter-princess', 'train-station-poster', 'knight-with-sword', 'football-field', 'rainy-night', 'bunnies', 'roses-and-marshmallows', 'playful-cat', 'wall-mural', 'gallery-visitor', 'equestrienne', 'new-year-frames', 'ghostwood', 'frankenstein-monster', 'brass-frame', 'red-and-blue', 'painting-and-sketches', 'new-york-street', 'wedding-day', 'vhs', 'passing-by-the-painting', 'lemon-tree', 'evening-billboard', 'kitty-and-frame', 'pedestrian-crossing', 'press_conference', 'picture_at_the_gallery', 'on_the_mountain', 'building_painters', 'replacing_billboard_advert', 'warrior', 'heart_locket', 'painter_at_work', 'galeries_lafayette', 'mermaid', 'goats', 'golden_valentine', 'london_calling', 'drawing_near_the_sea', 'ornament', 'indian_beauty', 'apples', 'spring_memories', 'brugge', 'medieval_art', 'cappuccino', 'modern_art_exhibition', 'louvre', 'watercolours', 'woman_pilot', 'vintage_table', 'pavement_artist', 'bicycle', 'bunny_ears', 'crooked_gambler', 'frame_and_roses', 'crown', 'oxford', 'midnight_billboard', 'pis
