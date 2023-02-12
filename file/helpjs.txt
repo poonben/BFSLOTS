@@ -1,0 +1,14 @@
+╭─────────────
+├─≽  Java Scripts
+├ • zul: (number)
+├ • js: (number)
+├ • jiran: (number)
+├ • cancel: (number)
+├ • #sabar
+├ • #zul
+├ • #habisin
+├ • tanpasisa
+├ • /kill (name)
+├ • /kick ( @ )
+├ • Kick ( @ ) 
+╰─────────────

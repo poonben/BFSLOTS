@@ -1,0 +1,9 @@
+╭─────────────
+├─≽  Java Scripts
+├ • #zul
+├ • #sabar
+├ • zul: (number)
+├ • /kill (name)
+├ • /kick ( @ )
+├ • Kick ( @ ) 
+╰─────────────

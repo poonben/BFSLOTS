@@ -1,0 +1,18 @@
+╭─────────────
+├─≽ • Cmd Admin
+├ • Blc
+├ • Bot:on
+├ • Bot:repeat
+├ • Staff:on
+├ • Staff:repeat
+├ • Admin:on
+├ • Admin:repeat
+├ • Botadd @
+├ • Botdell @
+├ • Adminadd @
+├ • Admimdell @
+├ • Staffadd @
+├ • Staffdell @
+├ • Kick @
+├ • Ulti @ 
+╰─────────────

@@ -1,0 +1,9 @@
+╭────────────
+├─≽  Cmd Protection
+├ • Pqr on/off
+├ • Pinvite on/off
+├ • Pjoin on/off
+├ • Pcancell on/off
+├ • Pkick on/off
+├ • Notag on/off 
+╰─────────────

@@ -1,0 +1,13 @@
+╭─────────────
+├─≽ • Cmd Banned
+├ • Blc
+├ • Banlist
+├ • Clearban
+├ • Ban:on
+├ • Unban:on
+├ • Ban @
+├ • Unban @
+├ • Talkban @
+├ • Untalkban @
+├ • Talkbanlist 
+╰─────────────

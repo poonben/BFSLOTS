@@ -1,0 +1,21 @@
+╭─────────────
+├─≽ • Translate
+├ • Indo (text)
+├ • Eng (text)
+├ • Japan (text)
+├ • Korea (text)
+├ • Spanyol (text)
+├ • Francis (text)
+├ • China (text)
+├ • Sunda (text)
+├ • Arab (text)
+├ • Rusia (text)
+├ • Itali (text)
+├ • Thai (text)
+├ • Vietnam (text)
+├ • Turki (text)
+├ • Filipin (text)
+├ • Jawa (text)
+├ • German (text)
+├ • Malay (text)
+╰─────────────

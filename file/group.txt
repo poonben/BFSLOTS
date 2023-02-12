@@ -1,0 +1,40 @@
+╭─────────────
+├─≽ • Cmd Groups
+├ • Me
+├ • Mid
+├ • Hay
+├ • Tag
+├ • Stag
+├ • Ginfo
+├ • Speed/sp
+├ • Buka qr
+├ • Tutup qr
+├ • Url
+├ • Gruplist
+├ • Clearchat
+├ • Clearallfriend
+├ • Refresh
+├ • Sider on/off
+├ • Mykey
+├ • Resetkey
+├ • Setkey (text)
+├ • Block @
+├ • Cek @
+├ • Find @
+├ • Rename @
+├ • Mid @
+├ • @bye
+├ • Addfriend @
+├ • Call @
+├ • Idline (id)
+├ • Gnamegrup (text)
+├ • Sider on/off
+├ • Unsend (jumlah)
+├ • Spamtag (jumlah)
+├ • Spamcall (jumlah)
+├ • Spamcall: (jumlah)
+├ • Spamcall
+├ • Gift: (mid)(jumlah)
+├ • Spam on|jumlah|text
+├ • Tag (jumlah di pm)
+╰─────────────

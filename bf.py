@@ -1608,7 +1608,7 @@ def sendTextTemplate(to, text):
             "action": {
               "type": "uri",
               "label": "action",
-              "uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+              "uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
             }
           }
         ],
@@ -6167,7 +6167,7 @@ def bot(op):
 "aspectRatio": "4:5",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }
 },
@@ -6184,7 +6184,7 @@ def bot(op):
 "aspectRatio": "2:3",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }}],
 "position": "absolute",
@@ -6207,7 +6207,7 @@ def bot(op):
 "aspectRatio": "2:3",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }}],
 "position": "absolute",
@@ -6230,7 +6230,7 @@ def bot(op):
 "aspectRatio": "2:3",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }}],
 "position": "absolute",
@@ -6253,7 +6253,7 @@ def bot(op):
 "aspectRatio": "2:3",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }}],
 "position": "absolute",
@@ -9993,12 +9993,12 @@ def bot(op):
                                restartBot()
                                sendTextTemplate1(msg.to, "ᴅᴏɴᴇ ʙᴏs")
 #============================ABOUT====================================
-                        elif cmd == "about":
+                        elif cmd == "ข้อมูลกลุ่ม":
                                 groups = cl.getGroupIdsJoined()
                                 contacts = cl.getAllContactIds()
                                 blockeds = cl.getBlockedContactIds()
-                                crt = "uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1"
-                                supp = "uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1","uadef1340887c690dfad8b5307adcecf1"
+                                crt = "ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577"
+                                supp = "ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577","ue8d4c133178ae5a305354ddc71b1e577"
                                 suplist = []
                                 lists = []
                                 tz = pytz.timezone("Asia/Makassar")
@@ -10171,7 +10171,7 @@ def bot(op):
 }
                                 cl.postTemplate(to, data)
                         
-                        elif cmd == "order" or text.lower() == 'promo':                            	
+                        elif cmd == "bfcat" or text.lower() == 'โปรโมท':                            	
                                 contact = cl.getProfile()
                                 mids = [contact.mid]
                                 tz = pytz.timezone("Asia/Jakarta")
@@ -10180,333 +10180,38 @@ def bot(op):
                                 cover = cl.getProfileCoverURL(sender)
                                 data = {
   "type": "bubble",
-  "body": {
+  "size": "kilo",
+  "hero": {
+    "type": "image",
+    "url": "https://sv1.picz.in.th/images/2023/02/11/LlNWog.jpg",
+    "size": "full",
+    "aspectMode": "cover",
+    "aspectRatio": "2:2"
+  },
+  "footer": {
     "type": "box",
-    "layout": "vertical",
+    "layout": "horizontal",
     "contents": [
       {
-        "type": "image",
-        "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-        "size": "full",
-        "aspectMode": "cover",
-        "aspectRatio": "1:1",
-        "gravity": "center"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ",〔 BF SLOT เข้าใจวัยรุ่น 〕",
-            "size": "lg",
-            "color": "#000000",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "248px",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#ff0000",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "282px",
-        "height": "40px",
-        "backgroundColor": "#00fdff"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "List Bot",
-            "size": "lg",
-            "color": "#00fdff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "198px",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "140px",
-        "height": "45px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Harga Bots",
-            "size": "lg",
-            "color": "#00fdff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "198px",
-        "offsetStart": "149px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "140px",
-        "height": "45px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Selfbot Temp",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Sel Temp Ajs",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Sel Asis Ajs",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Pro rom chat",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "HelperGolang",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "120px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Rp.50K",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.100",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.150",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.PmC",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.350",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "169px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "120px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "offsetBottom": "15px"
-          },
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "size": "full",
-            "offsetBottom": "35px",
-            "aspectRatio": "2:3"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "118px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "60px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Tak Ada Yang Sempurna",
-                "color": "#000000",
-                "align": "center",
-                "weight": "bold"
-              }
-            ],
-            "backgroundColor": "#00fdff",
-            "borderWidth": "2px",
-            "borderColor": "#000000",
-            "cornerRadius": "10px"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Terimakasih Buat Famz Bots Atas Suport Dan Ilmu Yang Kalian Berikan Semoga Kita Semua Masih Bisa Terus Berkarya... TEAM TERMUX ...Amiin..",
-                "color": "#000000",
-                "align": "center",
-                "weight": "bold",
-                "size": "xxs",
-                "style": "italic",
-                "wrap": True
-              }
-            ],
-            "backgroundColor": "#ffffff",
-            "borderWidth": "2px",
-            "borderColor": "#000000",
-            "cornerRadius": "10px",
-            "height": "54px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "282px",
-        "height": "82px",
-        "offsetTop": "208px"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://youtu.be/L2_hbANTrkM"
-            }
-          }
-        ],
-        "position": "absolute",
-        "width": "80px",
-        "height": "80px",
-        "offsetTop": "150px",
-        "offsetStart": "230px"
+        "type": "text",
+        "text": "โปรนี้ไม่เล่น ต้องเล่นมาริโอ้ล่ะ",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://betflixcat.com/?ref=14396"
+        },
+        "weight": "bold",
+        "align": "center",
+        "color": "#ff0000"
       }
     ],
-    "paddingAll": "0px",
-    "borderColor": "#00fdff",
-    "borderWidth": "2px",
-    "cornerRadius": "15px"
+    "background": {
+      "type": "linearGradient",
+      "angle": "32deg",
+      "startColor": "#000000",
+      "endColor": "#000000",
+      "centerColor": "#ffffff"
+    }
   }
 }
 
@@ -10542,7 +10247,7 @@ def bot(op):
 "aspectRatio": "4:4",
 "gravity": "bottom",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }
 },
@@ -10582,7 +10287,7 @@ def bot(op):
 "aspectRatio": "2:2",
 "offsetTop": "0px",
 "action": {
-"uri": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1",
+"uri": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577",
 "type": "uri",
 }}],
 "position": "absolute",
@@ -10760,7 +10465,7 @@ def bot(op):
                                         "sentBy": {
                                             "label": " 🔰〔 BF SLOT เข้าใจวัยรุ่น 〕🔰",
                                             "iconUrl": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-                                            "linkUrl": "line://nv/profilePopup/mid=uadef1340887c690dfad8b5307adcecf1"
+                                            "linkUrl": "line://nv/profilePopup/mid=ue8d4c133178ae5a305354ddc71b1e577"
                                         }
                                     }
                                     cl.postTemplate(to, data)
@@ -13243,335 +12948,4 @@ while True:
                 # Don't remove this line, if you wan't get error soon!
                 oepoll.setRevision(op.revision)
     except Exception as e:
-    	logError(e)                      
-                                                              {
-  "type": "bubble",
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "image",
-        "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-        "size": "full",
-        "aspectMode": "cover",
-        "aspectRatio": "1:1",
-        "gravity": "center"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": ",〔 BF SLOT เข้าใจวัยรุ่น 〕",
-            "size": "lg",
-            "color": "#000000",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "248px",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#ff0000",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "282px",
-        "height": "40px",
-        "backgroundColor": "#00fdff"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "List Bot",
-            "size": "lg",
-            "color": "#00fdff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "198px",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "140px",
-        "height": "45px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Harga Bots",
-            "size": "lg",
-            "color": "#00fdff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetBottom": "198px",
-        "offsetStart": "149px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "140px",
-        "height": "45px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Selfbot Temp",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Sel Temp Ajs",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Sel Asis Ajs",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Pro rom chat",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": "HelperGolang",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetEnd": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "120px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "Rp.50K",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.100",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.150",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.PmC",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          },
-          {
-            "type": "text",
-            "text": "Rp.350",
-            "size": "xs",
-            "color": "#ffffff",
-            "align": "center",
-            "weight": "bold",
-            "offsetTop": "8px",
-            "offsetStart": "5px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "169px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "120px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000aa"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "offsetBottom": "15px"
-          },
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "size": "full",
-            "offsetBottom": "35px",
-            "aspectRatio": "2:3"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "118px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "60px",
-        "height": "105px",
-        "offsetTop": "100px",
-        "backgroundColor": "#000000"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Tak Ada Yang Sempurna",
-                "color": "#000000",
-                "align": "center",
-                "weight": "bold"
-              }
-            ],
-            "backgroundColor": "#00fdff",
-            "borderWidth": "2px",
-            "borderColor": "#000000",
-            "cornerRadius": "10px"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "Terimakasih Buat Famz Bots Atas Suport Dan Ilmu Yang Kalian Berikan Semoga Kita Semua Masih Bisa Terus Berkarya... TEAM TERMUX ...Amiin..",
-                "color": "#000000",
-                "align": "center",
-                "weight": "bold",
-                "size": "xxs",
-                "style": "italic",
-                "wrap": True
-              }
-            ],
-            "backgroundColor": "#ffffff",
-            "borderWidth": "2px",
-            "borderColor": "#000000",
-            "cornerRadius": "10px",
-            "height": "54px"
-          }
-        ],
-        "position": "absolute",
-        "offsetStart": "7px",
-        "offsetEnd": "0px",
-        "borderColor": "#00fdff",
-        "borderWidth": "2px",
-        "cornerRadius": "4px",
-        "width": "282px",
-        "height": "82px",
-        "offsetTop": "208px"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.ibb.co/QNFxN8N/1652366614290.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://youtu.be/L2_hbANTrkM"
-            }
-          }
-        ],
-        "position": "absolute",
-        "width": "80px",
-        "height": "80px",
-        "offsetTop": "150px",
-        "offsetStart": "230px"
-      }
-    ],
-    "paddingAll": "0px",
-    "borderColor": "#00fdff",
-    "borderWidth": "2px",
-    "cornerRadius": "15px"
-  }
-}
+    	logError(e) 

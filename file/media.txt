@@ -1,0 +1,43 @@
+╭───────────────
+├─≽ • Cmd Media
+├ • Corona
+├ • Cctv code
+├ • Cctv (number)
+├ • Info bmkg
+├ • Acara tv
+├ • Lowongan kerja
+├ • Addtext: (text)
+├ • List text
+├ • Deltext: (text)
+├ • Musik: (query)
+├ • Joox: (query)
+├ • Tiktok: (id)
+├ • Text 1 s/d 5 (text)
+├ • Google (query)
+├ • Porn (query)
+├ • Ytmp3 (query)
+├ • Ytmp4 (query)
+├ • resi-jnt: (resi)
+├ • resi-rex: (resi)
+├ • resi-sicepat: (resi)
+├ • resi-ninja: (resi)
+├ • resi-pos: (resi)
+├ • Smule (id)
+├ • Smuleprofile: (id)
+├ • Surahlist
+├ • Surah: (ayat)
+├ • Cuaca (kota)
+├ • Sholat (kota)
+├ • Fancytext (text)
+├ • Zodiak (query)
+├ • Instagram (id) 
+├ • Ponsel (merek)
+├ • Imagetext (query)
+├ • Acaratv (channel)
+├ • Nama (name)
+├ • Lahir (ttl)
+├ • Mimpi (query) 
+├ • Lyrik (title)
+├ • Calkulator (bilangan)
+├ • Image (query)
+╰─────────────

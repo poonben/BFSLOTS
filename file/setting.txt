@@ -1,0 +1,53 @@
+╭─────────────
+├─≽ • Settings Cmd
+├ • Cekpesan
+├ • Cekwelcome
+├ • Cekleave
+├ • Cekrespon
+├ • Ceksider
+├ • Cekspam
+├ • Cekcomment
+├ • Sticker tag
+├ • Sticker pesan
+├ • Sticker sider
+├ • Sticker welcome
+├ • Sticker leave
+├ • Setsider: (text)
+├ • Setpesan: (text)
+├ • Setwelcome: (text)
+├ • Setleave: (text)
+├ • Setspam: (text)
+├ • Setrespon: (text)
+├ • Sethelp: (text)
+├ • Setcban: (text)
+├ • Setbye: (text)
+├ • Setspeed: (text)
+├ • Setkick: (text)
+├ • Settagall: (text)
+├ • Setunsend: (text)
+├ • Setsider on: (text)
+├ • Setsider off: (text)
+├ • Myname: (text)
+├ • Updatefoto
+├ • Updategrup
+├ • Autojoin on/off
+├ • Autochat on/off
+├ • Autoleave on/off
+├ • Autoblock on/off
+├ • Autoread on/off
+├ • Autolike on/off
+├ • Respon on/off
+├ • Responcall on/off
+├ • Sticker on/off
+├ • Unsend on/off
+├ • Timeline on/off
+├ • Contact on/off
+├ • Callpm on/off
+├ • Autoadd on/off
+├ • Jointicket on/off
+├ • Welcomemsg on/off
+├ • Leavemsg on/off
+├ • Smule on/off
+├ • Yturl on/off
+├ • Tiktok on/off
+╰─────────────
