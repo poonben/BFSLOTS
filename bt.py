@@ -31,22 +31,27 @@ try:
     import urllib.request as urllib2
 except ImportError:
     import urllib2
-cl = LINE("hujj488@gmail.com","Aa1234")    
-#cl = LINE("Aryounoi100web@hotmail.com","Za0868726084") #ganti imel line mu di sini
+bot1 = LINE("hujj488@gmail.com","Aa1234")    
+cl = LINE("Aryounoi100web@hotmail.com","Za0868726084") #ganti imel line mu di sini
 cl.log("Auth Token : " + str(cl.authToken))
+
+#bot1 = LINE("gijeno4122@jmpant.com","Aa1234") #ganti imel line mu di sini
+bot1.log("Auth Token : " + str(bot1.authToken))
 #==========SB_TEMPLATE========
 print ("\nSukses Bro..BY BF SLOT เข้าใจวัยรุ่น")
 oepoll = OEPoll(cl)
 call = cl
 creator = ["ue8d4c133178ae5a305354ddc71b1e577"]
-owner = ["u917ee831e5df87145bf880d30f8d5cb3"]
-admin = ["u917ee831e5df87145bf880d30f8d5cb3"]
-staff = ["ganti mid kamu"]
+owner = ["u917ee831e5df87145bf880d30f8d5cb3","ue8d4c133178ae5a305354ddc71b1e577"]
+admin = ["u917ee831e5df87145bf880d30f8d5cb3","ue8d4c133178ae5a305354ddc71b1e577"]
+staff = ["ue8d4c133178ae5a305354ddc71b1e577"]
 
+api = {"kw":{}}
 lineProfile = cl.getProfile()
 mid = cl.getProfile().mid
+Amid = bot1.getProfile().mid
 KAC = [cl]
-Bots = [mid]
+Bots = [mid,Amid]
 Saints = admin + owner + staff
 admin = creator + owner + admin + staff + Bots
 Setbot = codecs.open("setting.json","r","utf-8")
@@ -71,7 +76,7 @@ offbot = []
 
 #===
 settings = {
-    "welcome": False,
+    "welcome": True,
     "leave": False,
     "mid": False,
     "size": "micro",
@@ -259,12 +264,24 @@ try:
         msg_dict = json.loads(f.read())
 except:
     print("Couldn't read Log data")
-    
+
+try:
+    with open('api.json', 'r') as f:
+        api = json.load(f)
+except:
+    print("Couldn't read Log data")
+
+f = codecs.open('api.json','w','utf-8')
+json.dump(api, f, sort_keys=True, indent=4, ensure_ascii=False)  
+
 clProfile = cl.getProfile()
 myProfile["displayName"] = clProfile.displayName
 myProfile["statusMessage"] = clProfile.statusMessage
 myProfile["pictureStatus"] = clProfile.pictureStatus
-
+bot1Profile = bot1.getProfile()
+myProfile["displayName"] = bot1Profile.displayName
+myProfile["statusMessage"] = bot1Profile.statusMessage
+myProfile["pictureStatus"] = bot1Profile.pictureStatus
 contact = cl.getProfile()
 backup = cl.getProfile()
 backup.displayName = contact.displayName
@@ -2471,6 +2488,21 @@ def bot(op):
 
         if op.type == 0:
             return
+        if op.type == 26:
+            msg = op.message
+            if msg.text is None:
+                return
+            try:
+                if keyword["kw"][msg.text]:
+                    kwts = keyword["kw"][str(msg.text)]
+                    tn = cl.getContact(msg._from)
+                    kwts = kwts.replace("{NAME}",tn.displayName)
+                    try:
+                        cl.sendMessage(msg.to,str(kwts))
+                    except:
+                        cl.sendMessage(msg._from,str(kwts))
+            except Exception as Error:
+                pass
         if op.type == 5:
             if wait["autoAdd"] == True:
                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -9881,7 +9913,7 @@ def bot(op):
       "size": "giga",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/pro.png",
+        "url": "https://slotthai.ml/img/pros.png",
         "size": "full",
         "aspectMode": "cover",
         "aspectRatio": "20:23.7"
@@ -9923,60 +9955,253 @@ def bot(op):
                               for gp in gb:
                                   cl.postTemplate(gp, data)
 
-                        elif cmd.startswith("bfcat"):
+                        elif cmd.startswith("nasa"):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                tz = pytz.timezone("Asia/Jakarta")
                                timeNow = datetime.now(tz=tz)
                                data = {  
  "type": "flex",
- "altText": "้bfslots เข้าใจวัยรุ่น",
+ "altText": "้bfslots เนะนำ นาซ่า สล็อต ",
  "contents":{
   "type": "bubble",
   "size": "giga",
-  "hero": {
-    "type": "image",
-    "url": "https://slotthai.ml/img/betflex.png",
-    "size": "full",
-    "aspectMode": "cover",
-    "aspectRatio": "2:2",
-    "animated": true
-  },
-  "footer": {
+  "body": {
     "type": "box",
-    "layout": "horizontal",
+    "layout": "vertical",
     "contents": [
       {
-        "type": "text",
-        "text": "สมัครสมาชิก",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "https://betflixcat.com/?ref=14396"
+        "type": "image",
+        "url": "https://slotthai.ml/img/pros.png",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "20:23.8",
+        "gravity": "center"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "โปรโมทเว็บพนัน Click",
+            "color": "#00fdff",
+            "weight": "bold",
+            "align": "center",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://lin.ee/9FX1chx"
+            }
+          }
+        ],
+        "position": "absolute",
+        "offsetBottom": "0px",
+        "offsetStart": "0px",
+        "offsetEnd": "none",
+        "paddingAll": "20px",
+        "background": {
+          "type": "linearGradient",
+          "angle": "0deg",
+          "startColor": "#ffffff50",
+          "endColor": "#ffffff50",
+          "centerColor": "#000000aa"
         },
-        "weight": "bold",
-        "align": "center",
-        "color": "#000000"
+        "borderColor": "#000000",
+        "borderWidth": "normal",
+        "cornerRadius": "lg",
+        "backgroundColor": "#ffdd0050"
       }
     ],
-    "background": {
-      "type": "linearGradient",
-      "angle": "50deg",
-      "startColor": "#fa0000",
-      "endColor": "#fa0000",
-      "centerColor": "#ffffff"
-    }
+    "paddingAll": "0px"
   }
 }
 }                               
                                
                                saya = cl.getGroupIdsJoined()
                                for group in saya:
-                                   cl.sendTextTemplate(group, data)
+                                   cl.postTemplate(group, data)
                                  #"""
                         elif cmd.startswith("แชร์"):
                             if msg._from in creator or msg._from in admin:
                                 groups = cl.getGroupIdsJoined()
+                                groupb = bot1.getGroupIdsJoined()
+                                
+                                for group1 in groupb:
+                                    try:
+                                        time.sleep(0/200)
+                                        data =  {  
+ "type": "flex",
+ "altText": "้bfslots เข้าใจวัยรุ่น",
+ "contents":
+ 
+     {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa1.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 สมัครตรงนี้ 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa2.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 คลิ๊ก ๆ 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa3.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 รับโปรคลิ๊ก 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa4.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 ฝากวันนี้รวย 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    }
+  ]
+}
+ }
+ 
+                                        
+                                        bot1.postTemplate(group1, data)
+                                    except:pass 
+
                                 for group in groups:
                                     try:
                                         time.sleep(0/200)
@@ -9990,13 +10215,13 @@ def bot(op):
   "contents": [
     {
       "type": "bubble",
-      "size": "giga",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat3.png",
+        "url": "https://slotthai.ml/img/nasa1.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23.7"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
@@ -10004,14 +10229,14 @@ def bot(op):
         "contents": [
           {
             "type": "text",
-            "text": "สนใจ คลิ๊ก",
+            "text": "🔥 สมัครตรงนี้ 🔥",
             "weight": "bold",
             "align": "center",
             "color": "#ffffff",
             "action": {
               "type": "uri",
               "label": "action",
-              "uri": "https://betflixcat.com/?ref=14396"
+              "uri": "https://bit.ly/BFSLOTS3"
             }
           }
         ],
@@ -10020,21 +10245,22 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
         }
       }
     },
     {
       "type": "bubble",
-      "size": "giga",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat2.png",
+        "url": "https://slotthai.ml/img/nasa2.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23.7"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
@@ -10042,14 +10268,14 @@ def bot(op):
         "contents": [
           {
             "type": "text",
-            "text": "สนใจ คลิ๊ก",
+            "text": "🔥 คลิ๊ก ๆ 🔥",
             "weight": "bold",
             "align": "center",
             "color": "#ffffff",
             "action": {
               "type": "uri",
               "label": "action",
-              "uri": "https://betflixcat.com/?ref=14396"
+              "uri": "https://bit.ly/BFSLOTS3"
             }
           }
         ],
@@ -10058,21 +10284,22 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
         }
       }
     },
     {
       "type": "bubble",
-      "size": "giga",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat1.png",
+        "url": "https://slotthai.ml/img/nasa3.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23.7"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
@@ -10080,14 +10307,14 @@ def bot(op):
         "contents": [
           {
             "type": "text",
-            "text": "สนใจ คลิ๊ก",
+            "text": "🔥 รับโปรคลิ๊ก 🔥",
             "weight": "bold",
             "align": "center",
             "color": "#ffffff",
             "action": {
               "type": "uri",
               "label": "action",
-              "uri": "https://betflixcat.com/?ref=14396"
+              "uri": "https://bit.ly/BFSLOTS3"
             }
           }
         ],
@@ -10096,9 +10323,49 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa4.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 ฝากวันนี้รวย 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
         }
       }
     }
@@ -10110,11 +10377,13 @@ def bot(op):
                                         cl.postTemplate(group, data)
                                     except:pass  
 #broadcast
-                        elif cmd.startswith("###"):
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                               data =   {  
- "type": "flex",
+                        elif cmd.startswith("เพื่อน"):
+                          if msg._from in admin:
+                              contacts = cl.getAllContactIds()
+                              for contact in contacts:
+                                  try:
+                                    time.sleep(20)
+                                    data = {"type": "flex",
  "altText": "้bfslots เข้าใจวัยรุ่น",
  "contents":
  
@@ -10123,28 +10392,29 @@ def bot(op):
   "contents": [
     {
       "type": "bubble",
-      "size": "kilo",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat3.png",
+        "url": "https://slotthai.ml/img/nasa1.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
-        "layout": "horizontal",
+        "layout": "baseline",
         "contents": [
           {
-            "type": "button",
+            "type": "text",
+            "text": "🔥 สมัครตรงนี้ 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
             "action": {
               "type": "uri",
-              "label": "สมัครสมาชิก",
-              "uri": "https://betflixcat.com/?ref=14396"
-            },
-            "style": "link",
-            "color": "#ffffff",
-            "position": "relative"
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
           }
         ],
         "backgroundColor": "#000000",
@@ -10152,37 +10422,38 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
-        },
-        "maxHeight": "50px"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
       }
     },
     {
       "type": "bubble",
-      "size": "kilo",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat2.png",
+        "url": "https://slotthai.ml/img/nasa2.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
-        "layout": "horizontal",
+        "layout": "baseline",
         "contents": [
           {
-            "type": "button",
+            "type": "text",
+            "text": "🔥 คลิ๊ก ๆ 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
             "action": {
               "type": "uri",
-              "label": "สมัครสมาชิก",
-              "uri": "https://betflixcat.com/?ref=14396"
-            },
-            "style": "link",
-            "color": "#ffffff",
-            "position": "relative"
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
           }
         ],
         "backgroundColor": "#000000",
@@ -10190,37 +10461,38 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
-        },
-        "maxHeight": "50px"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
       }
     },
     {
       "type": "bubble",
-      "size": "kilo",
+      "size": "micro",
       "hero": {
         "type": "image",
-        "url": "https://slotthai.ml/img/bfcat1.png",
+        "url": "https://slotthai.ml/img/nasa3.jpg",
         "size": "full",
         "aspectMode": "cover",
-        "aspectRatio": "20:23"
+        "aspectRatio": "2:2"
       },
       "footer": {
         "type": "box",
-        "layout": "horizontal",
+        "layout": "baseline",
         "contents": [
           {
-            "type": "button",
+            "type": "text",
+            "text": "🔥 รับโปรคลิ๊ก 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
             "action": {
               "type": "uri",
-              "label": "สมัครสมาชิก",
-              "uri": "https://betflixcat.com/?ref=14396"
-            },
-            "style": "link",
-            "color": "#ffffff",
-            "position": "relative"
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
           }
         ],
         "backgroundColor": "#000000",
@@ -10228,21 +10500,57 @@ def bot(op):
         "borderColor": "#ffdd00",
         "background": {
           "type": "linearGradient",
-          "angle": "90deg",
-          "startColor": "#ff0000",
-          "endColor": "#ffdd00"
-        },
-        "maxHeight": "50px"
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "micro",
+      "hero": {
+        "type": "image",
+        "url": "https://slotthai.ml/img/nasa4.jpg",
+        "size": "full",
+        "aspectMode": "cover",
+        "aspectRatio": "2:2"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "🔥 ฝากวันนี้รวย 🔥",
+            "weight": "bold",
+            "align": "center",
+            "color": "#ffffff",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://bit.ly/BFSLOTS3"
+            }
+          }
+        ],
+        "backgroundColor": "#000000",
+        "justifyContent": "space-evenly",
+        "borderColor": "#ffdd00",
+        "background": {
+          "type": "linearGradient",
+          "angle": "40deg",
+          "startColor": "#ff00dd",
+          "endColor": "#ff00dd",
+          "centerColor": "#0000ff99"
+        }
       }
     }
   ]
-}
-     
- }
-                               
-                               saya = cl.getGroupIdsJoined()
-                               for group in saya:
-                                   cl.postTemplate(group, data)
+}}
+                                    cl.postTemplate(contact, data)
+                                    cl.sendMessage(msg.to, "ส่งแว้วววว")
+                                  except:pass  
 
                         elif cmd == "โปรไฟล์":
                           if msg._from in admin:
@@ -10548,7 +10856,8 @@ def bot(op):
 }
                                 cl.postTemplate(to, data)
                         
-                        elif cmd == "ไปบอท" or text.lower() == 'ไป':                            	
+                        elif text.lower() == 'ไป':
+                                                      	
                                 contact = cl.getProfile()
                                 mids = [contact.mid]
                                 tz = pytz.timezone("Asia/Jakarta")
@@ -13365,6 +13674,47 @@ def bot(op):
                                     ret_ += str("├≽") + " " + audio.title() + "\n"
                                 ret_ += "╰───「 Total {} Image 」".format(str(len(audios)))
                                 sendTextTemplate2(to, ret_)
+                          
+                        if msg.text.lower() == "api":
+                             mas = "╭────────────"
+                             mas += "\n│ดูตัวอย่าง:\n│ตั้งapi เทส;;เทสอะไรครับ"
+                             mas += "\n│ต้องมี ;; ทุกครั้ง"
+                             mas += "\n╰────────────"
+                             cl.sendMessage(msg.to,mas)
+                        if msg.text.lower() == "เช็คapi":
+                             
+                             lisk = "[ คำสั่งตอบโต้ ]\n"
+                             for i in api["kw"]:
+                                 
+                                 lisk+="\nคีย์เวิร์ด: "+str(i)+"\nตอบโต้: "+str(api["kw"][i])+"\n"
+                                 cl.sendMessage(msg.to,lisk)    
+                   
+               
+                        if msg.text.startswith("ล้างapi "):
+                             
+                             try:
+                                 delcmd = msg.text.spilit(" ")
+                                 getx = msg.text.replace(delcmd[0] + " ","")
+                                 del api["kw"][getx]
+                                 cl.sendMessage(msg.to, "คำตอบโต้ " + str(getx) + " ล้างแล้ว")
+                                 f=codecs.open('api.json','w','utf-8')
+                                 json.dump(api, f, sort_keys=True, indent=4, ensure_ascii=False)
+                             except Exception as Error:
+                                 print(Error)
+                        if msg.text.startswith("ตั้งapi "):
+                            try:
+                                 delcmd = msg.text.split(" ")
+                                 get = msg.text.replace(delcmd[0]+" ","").split(";;")
+                                 kw = get[0]
+                                 ans = get[1]
+                                 api["kw"][kw] = ans
+                                 f=codecs.open('api.json','w','utf-8')
+                                 json.dump(ans, f, sort_keys=True, indent=4, ensure_ascii=False)
+                                 cl.sendMessage(msg.to,"คีย์เวิร์ด: " + str(kw) + "\nตอบกลับ: " +str(ans))
+                            except Exception as Error:
+                                   print(Error)
+
+
 #==============add video==========================================================================
                         elif cmd.startswith("เพิ่มวีดีโอ"):
                             if msg._from in admin:
@@ -13394,7 +13744,8 @@ def bot(op):
                                else:
                                    sendTextTemplate1(to, "video tidak ada")
 
-                        elif cmd == "วีดีโอ":
+                        
+                        elif cmd.startswith("วีดีโอ"):
                             if msg._from in admin:
                                 no = 0
                                 ret_ = "╭───「 Daftar Video 」\n"
